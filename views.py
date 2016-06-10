@@ -1,6 +1,6 @@
 from django.http import HttpResponse
-from django.template import Template
-from django.shortcuts import render_to_response,render
+#from django.template import Template
+#from django.shortcuts import render_to_response,render
 import gnupg
 
 
@@ -13,7 +13,7 @@ def sign(request):
     if request.method == 'POST':
         return HttpResponse(gpg.sign(request.body))
     else:
-        return ''
+        return HttpResponse('')
 
 def verify(request):
     if request.method == 'POST':
